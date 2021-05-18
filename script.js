@@ -1,4 +1,4 @@
-// alert('Задание#0 (угадай число) Версия2')
+alert('Задание#0 (угадай число) Версия2\nЧисло четырехзначное, цифры не повторяются')
 function randomNum() {
    var a = 0;
    var b = 0;
@@ -13,7 +13,7 @@ function randomNum() {
    return String(a) + String(b) + String(c) + String(d);
  }
 
-var cow_dict = new Set(); 
+
 var count = 0;
 var STOP = '';
 var secret_number = randomNum();
@@ -21,45 +21,60 @@ var secret_number = randomNum();
 alert('Браузер загадал число, угадайте его\nДля выхода введите "stop" вместо числа')
 
 while (STOP.toLowerCase() != 'stop') {
-   var user_number=prompt("Введите число");
-   STOP = user_number;
    count += 1;
-   if (secret_number[0] == user_number[0]) {
-      alert('Бык: ' + user_number[0] + '***')
-      cow_dict.add(user_number[0])
+   var user_number=prompt("Попытка № " + count + "\nВведите число");
+   STOP = user_number;
+   
+   if (secret_number == user_number) {
+      alert('Вы угадали!\nБыло загадано число: ' + secret_number)
    }
-   if (secret_number[1] == user_number[1]) {
-      alert('Бык: ' + '*' + user_number[1] + '**')
-      cow_dict.add(user_number[1])
+   else{
+      var cow_dict = new Set(); 
+      if (secret_number[0] == user_number[0]) {
+         alert('Бык: ' + user_number[0] + '***')
+         cow_dict.add(user_number[0])
+      }
+      if (secret_number[1] == user_number[1]) {
+         alert('Бык: ' + '*' + user_number[1] + '**')
+         cow_dict.add(user_number[1])
+      }
+      if (secret_number[2] == user_number[2]) {
+         alert('Бык: ' + '**' + user_number[2] + '*')
+         cow_dict.add(user_number[2])
+      }
+      if (secret_number[3] == user_number[3]) {
+         alert('Бык: ' + '***' + user_number[3] )
+         cow_dict.add(user_number[3])
+      }
+      for (let i = 0; i < 4; i++) {
+         if (secret_number.indexOf(user_number[i]) > -1 && !(cow_dict.has(user_number[i]))) {
+            alert('Корова: ' + user_number[i]);
+         }
+      }
+}
+}
+
+/////////////////////////////////////1//////////////////////////////////////////
+alert('Задание#1\nВывести простые числа до 100 при помощи while')
+var max = 100;
+var min = 2;
+var check_min = 2;
+// var indication = 1;
+while (min <= max) {
+   var indication = 1;
+   while (check_min < min) {
+      if (min % check_min == 0) {
+         indication = 0;
+      }
+   check_min += 1;
    }
-   if (secret_number[2] == user_number[2]) {
-      alert('Бык: ' + '**' + user_number[2] + '*')
-      cow_dict.add(user_number[2])
+   if (indication == 1) {
+      alert(min);
    }
-   if (secret_number[3] == user_number[3]) {
-      alert('Бык: ' + '***' + user_number[3] )
-      cow_dict.add(user_number[3])
-   }
-   for (let i = 0; i > 3; i++) {
-      
+   check_min = 2;
+   min += 1;
+}
+/////////////////////////////////////////////////////////////////////////////////
 
-
-   }
-
-}   
-
-
-
-//     if (user_number > secret_number) {
-//         alert('Загаданное число меньше.\nВы загадывали:' + user_number  + '\nКоличество попыток = ' + count);
-//     }
-//     else if (user_number < secret_number) {
-//         alert('Загаданное число больше.\nВы загадывали:' + user_number  + '\nКоличество попыток = ' + count);
-//     }
-//     else if (user_number == secret_number) {
-//         alert('Вы уагадали, браузер загадал число: ' + secret_number + '\nКоличество попыток = ' + count);
-//         count = 0;
-//         alert('Браузер загадал новое число... Играем');
-//         secret_number = randomInteger(1, 9999);
-//     }
-// } 
+/////////////////////////////////////2//////////////////////////////////////////
+alert('Задание#2\nФункциональность подсчета стоимости корзины интернет магазина')
