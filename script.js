@@ -4,14 +4,14 @@ function randomNum() {
    var b = 0;
    var c = 0;
    var d = 0;
-   while (b == a || c == a || d == a || b == c || b == d || d == c || a == 0 ) {
+   while (b == a || c == a || d == a || b == c || b == d || d == c || a == 0) {
       b = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
       c = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
       d = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
       a = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
    }
    return String(a) + String(b) + String(c) + String(d);
- }
+}
 
 
 var count = 0;
@@ -22,14 +22,14 @@ alert('Браузер загадал число, угадайте его\nДля
 
 while (STOP.toLowerCase() != 'stop') {
    count += 1;
-   var user_number=prompt("Попытка № " + count + "\nВведите число");
+   var user_number = prompt("Попытка № " + count + "\nВведите число");
    STOP = user_number;
-   
+
    if (secret_number == user_number) {
       alert('Вы угадали!\nБыло загадано число: ' + secret_number)
    }
-   else{
-      var cow_dict = new Set(); 
+   else {
+      var cow_dict = new Set();
       if (secret_number[0] == user_number[0]) {
          alert('Бык: ' + user_number[0] + '***')
          cow_dict.add(user_number[0])
@@ -43,7 +43,7 @@ while (STOP.toLowerCase() != 'stop') {
          cow_dict.add(user_number[2])
       }
       if (secret_number[3] == user_number[3]) {
-         alert('Бык: ' + '***' + user_number[3] )
+         alert('Бык: ' + '***' + user_number[3])
          cow_dict.add(user_number[3])
       }
       for (let i = 0; i < 4; i++) {
@@ -51,7 +51,7 @@ while (STOP.toLowerCase() != 'stop') {
             alert('Корова: ' + user_number[i]);
          }
       }
-}
+   }
 }
 
 /////////////////////////////////////1//////////////////////////////////////////
@@ -66,7 +66,7 @@ while (min <= max) {
       if (min % check_min == 0) {
          indication = 0;
       }
-   check_min += 1;
+      check_min += 1;
    }
    if (indication == 1) {
       alert(min);
@@ -78,13 +78,16 @@ while (min <= max) {
 
 /////////////////////////////////////2-3////////////////////////////////////////
 alert('Задание#2-3\n Функциональность подсчета стоимости корзины интернет магазина')
+
 ////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////4//////////////////////////////////////////
 alert('Задание#4\n Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.')
-for (i = 0; i < 10; alert(i++))
-{}
+for (i = 0; i < 10; alert(i++)) { }
 ////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////5//////////////////////////////////////////
 alert('Задание#5\n Нарисовать пирамиду с 20 рядами с помощью console.log, как показано на рисунке')
+for (i = 1; i < 21; i++) {
+   console.log('*'.repeat(i))
+}
