@@ -23,9 +23,10 @@ function basket_create() {
     basketDiv.style.maxWidth = '550px';
     basketDiv.style.minHeight = '50px';
     basketDiv.style.minWidth = '100px';
+    basketDiv.style.marginTop = '50px';
     // basketDiv.style.margin = 'auto';
     basketDiv.style.position = 'absolute'
-    basketDiv.style.left = '700px'
+    basketDiv.style.left = '650px'
     basketDiv.style.color = 'cyan';
     basketDiv.style.justifyContent = 'center'
     // basketDiv.style.marginBottom = '50px';

@@ -8,6 +8,7 @@ function main() {
         board.style.margin = 'auto';
         board.style.marginBottom = '50px';
         board.style.marginTop = '50px';
+        board.style.position = 'absolute'
         board.style.display = 'flex';
         board.style.flexWrap = 'wrap';
         board.style.paddingRight = '50px';
