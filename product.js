@@ -53,7 +53,7 @@ function render(num) {
         button.style.backgroundColor = '#a88989';
     }
 }
-
+//
 //заполнение карточек данными из массива
 for (let n = 0; n < products.length; n++) {
     window.onload = render(n);
