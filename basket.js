@@ -1,17 +1,17 @@
 var basket = {
     items: [
-        { title: 'goods1', price: 1000 },
-        { title: 'goods2', price: 2000 },
-        { title: 'goods3', price: 3000 },
-        { title: 'goods4', price: 4000 },
-        { title: 'goods5', price: 5000 },
+        { title: 'Телевизор Samsung', price: 1000 },
+        { title: 'Монитор ASUS', price: 2000 },
+        { title: 'iPhone20', price: 3000 },
+        { title: 'XBOX Seriex XXL', price: 4000 },
+        { title: 'Sony PlayStation 6', price: 5000 },
     ],
     count() {
         let _sum = 0;
         this.items.forEach(item => {
             _sum += item.price
         })
-        return ('В корзине: ' + basket.items.length + ' товаров на сумму ' + _sum + ' рублей');
+        return (`В корзине: ${basket.items.length} товаров на сумму ${_sum} рублей <br>`);
     }
 }
 
@@ -26,7 +26,7 @@ function basket_create() {
     basketDiv.style.marginTop = '50px';
     // basketDiv.style.margin = 'auto';
     basketDiv.style.position = 'absolute'
-    basketDiv.style.left = '650px'
+    basketDiv.style.left = '50px'
     basketDiv.style.color = 'cyan';
     basketDiv.style.justifyContent = 'center'
     // basketDiv.style.marginBottom = '50px';
@@ -37,13 +37,13 @@ function basket_create() {
     // board.style.paddingTop = '50px';
     basketDiv.style.backgroundColor = 'grey';
     if (basket.items.length == 0) {
-        basketDiv.insertAdjacentHTML('beforeend', '<p>Корзина пуста</p>')
+        basketDiv.insertAdjacentHTML('afterbegin', '<p>Корзина пуста</p>')
     }
     else {
-        basketDiv.insertAdjacentHTML('beforeend', basket.count())
+        basketDiv.insertAdjacentHTML('afterbegin', basket.count())
     }
-    for (let n = 0; n < basket.length; n++) {
-        
+    for (let n = 0; n < basket.items.length; n++) {
+        basketDiv.insertAdjacentHTML('beforeend', `${n+1}: ${basket.items[n].title}, стоимость - ${basket.items[n].price} руб.<br>` )
     }
 }
 
