@@ -1,0 +1,50 @@
+#basket{
+    border-color: black;
+    border-style: solid;
+    max-height: 550px;
+    max-width: 550px;
+    min-height: 50px;
+    min-width: 100px;
+    margin-top:  50px;
+    position: absolute;
+    left: 50px;
+    color:cyan;
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap ;
+    background-color: grey;
+}
+
+#prod{
+    max-width: 1px;
+    margin-top: 50px;
+    position: absolute;
+    left: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-color: black;
+    border-style: solid;
+    min-width: 450px;
+    min-height: 70px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    color: white;
+    align-items: center;
+    background-color: green;
+    justify-content: space-between;
+}
+
+.button{
+    display:flex;
+    border-color:  black;
+    border-style: solid;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 100%;
+    background-color: #8a8a66;
+}

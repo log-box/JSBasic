@@ -17,25 +17,6 @@ var basket = {
 
 function basket_create() {
     var basketDiv = document.getElementById("basket");
-    basketDiv.style.borderColor = 'black';
-    basketDiv.style.borderStyle = 'solid';
-    basketDiv.style.maxHeight = '550px';
-    basketDiv.style.maxWidth = '550px';
-    basketDiv.style.minHeight = '50px';
-    basketDiv.style.minWidth = '100px';
-    basketDiv.style.marginTop = '50px';
-    // basketDiv.style.margin = 'auto';
-    basketDiv.style.position = 'absolute'
-    basketDiv.style.left = '50px'
-    basketDiv.style.color = 'cyan';
-    basketDiv.style.justifyContent = 'center'
-    // basketDiv.style.marginBottom = '50px';
-    // basketDiv.style.marginTop = '50px';
-    basketDiv.style.display = 'flex';
-    basketDiv.style.flexWrap = 'wrap';
-    // board.style.paddingRight = '50px';
-    // board.style.paddingTop = '50px';
-    basketDiv.style.backgroundColor = 'grey';
     if (basket.items.length == 0) {
         basketDiv.insertAdjacentHTML('afterbegin', '<p>Корзина пуста</p>')
     }
@@ -43,10 +24,8 @@ function basket_create() {
         basketDiv.insertAdjacentHTML('afterbegin', basket.count())
     }
     for (let n = 0; n < basket.items.length; n++) {
-        basketDiv.insertAdjacentHTML('beforeend', `${n+1}: ${basket.items[n].title}, стоимость - ${basket.items[n].price} руб.<br>` )
+        basketDiv.insertAdjacentHTML('beforeend', `${n + 1}: ${basket.items[n].title}, стоимость - ${basket.items[n].price} руб.<br>`)
     }
 }
 
-
 window.onload = basket_create();
-// alert(basket.count())

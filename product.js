@@ -32,12 +32,6 @@ function prod_render() {
     let textDiv = document.createElement('div');
     prodDiv.appendChild(textDiv);
     textDiv.insertAdjacentHTML('afterbegin', `ПРОДУКЦИЯ: `);
-    prodDiv.style.maxWidth = '1px';
-    prodDiv.style.marginTop = '50px';
-    prodDiv.style.position = 'absolute'
-    prodDiv.style.left = '1100px'
-    prodDiv.style.display = 'flex';
-    prodDiv.style.flexWrap = 'wrap';
 }
 
 window.onload = prod_render();
@@ -49,37 +43,17 @@ function render(num) {
     card.appendChild(button);
     card.className = 'card';
     card.id = 'card' + num;
-    card.style.borderColor = 'black';
-    card.style.borderStyle = 'solid';
-    card.style.minWidth = '450px';
-    card.style.minHeight = '70px';
-    card.style.margin = '0px';
-    card.style.padding = '0px';
-    card.style.display = 'flex';
-    card.style.color = 'white';
-    card.style.alignItems = 'center';
-    card.style.backgroundColor = 'green';
-    card.style.justifyContent = 'space-between';
-    //добавление кнопки
     button.className = 'button';
     button.id = 'button' + num;
-    button.style.display = 'flex';
-    button.style.borderColor = 'black';
-    button.style.borderStyle = 'solid';
-    button.style.alignItems = 'center'
-    button.style.minWidth = '70px';
-    button.style.minHeight = '100%';
-    button.style.backgroundColor = '#8a8a66';
-    if (products[num].in_basket == false){
+    if (products[num].in_basket == false) {
         button.insertAdjacentHTML('afterbegin', `В корзину`);
     }
-    else{
+    else {
         button.insertAdjacentHTML('afterbegin', `В корзине`)
         button.style.backgroundColor = '#a88989';
     }
-    
-    
 }
+
 //заполнение карточек данными из массива
 for (let n = 0; n < products.length; n++) {
     window.onload = render(n);
@@ -101,6 +75,6 @@ function Product(name, price, array = products) {
     }
 }
 
-let a = new Product('test1', 121);
-a.pushToArray();
+// let a = new Product('test1', 121);
+// a.pushToArray();
 
