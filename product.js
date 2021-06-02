@@ -3,27 +3,32 @@ var products = [
     {
         prod_name: '22" (55 см) Телевизор LED DEXP F22F7000K черный',
         prod_price: 100000,
-        in_basket: false
+        in_basket: false,
+        prod_id: 1
     },
     {
         prod_name: 'Ключ активации DOOM (1993) (Xbox ONE)',
         prod_price: 10000,
-        in_basket: false
+        in_basket: false,
+        prod_id: 2
     },
     {
         prod_name: 'Кабель Samsung USB Type-C - USB Type C черный 1 м',
         prod_price: 1000,
-        in_basket: false
+        in_basket: false,
+        prod_id: 3
     },
     {
         prod_name: '27" Монитор LG 27QN600-B [27QN600-B.ARUZ]',
         prod_price: 100,
-        in_basket: false
+        in_basket: false,
+        prod_id: 4
     },
     {
         prod_name: '2 ТБ Внешний HDD WD Elements Portable [WDBU6Y0020BBK]',
         prod_price: 10,
-        in_basket: true
+        in_basket: false,
+        prod_id: 5
     },
 ]
 //отрисовка раздела продукции
@@ -37,14 +42,22 @@ function prod_render() {
 window.onload = prod_render();
 //отрисовка карточек
 function render(num) {
-    var card = document.createElement("div");
+    let card = document.createElement("div");
     let button = document.createElement("div");
+    let small_img = document.createElement('div');
+    card.appendChild(small_img);
     prod.appendChild(card);
     card.appendChild(button);
     card.className = 'card';
     card.id = 'card' + num;
     button.className = 'button';
     button.id = 'button' + num;
+    small_img.className = 'small_img';
+    small_img.id = 'small_img' + num;
+    small_img.style.backgroundImage = 'url(img/small/' + num + '.png)';
+    small_img.style.backgroundSize = '100%';
+    let button_target = document.querySelector('#button' + num);
+    button_target.addEventListener('click', clickHandler);
     if (products[num].in_basket == false) {
         button.insertAdjacentHTML('afterbegin', `В корзину`);
     }
@@ -74,7 +87,30 @@ function Product(name, price, array = products) {
         })
     }
 }
+//Функция обработки нажатия на кнопку
+function clickHandler (e) {
+    if (products[e.target.id[(e.target.id.length)-1]].in_basket == true ){
+        for (let n = 0; n < basket.items.length; n++) {
+            if (basket.items[n].prod_id === products[e.target.id[(e.target.id.length)-1]].prod_id) {
+                basket.items.splice(n,1);
+            }
+        }
+        // console.log('Товар', e.target.id[(e.target.id.length)-1],  'уже в корзине');
+        products[e.target.id[(e.target.id.length)-1]].in_basket = false;
+        e.target.firstChild.data = 'В корзину';
+        e.target.style.backgroundColor = '#8a8a66';
+        basket_create();
 
-// let a = new Product('test1', 121);
-// a.pushToArray();
+    }
+    else{
+        basket.items.push(products[e.target.id[(e.target.id.length)-1]]);
+        products[e.target.id[(e.target.id.length)-1]].in_basket = true;
+        e.target.firstChild.data = 'В корзине';
+        e.target.style.backgroundColor = '#a88989';
+        basket_create();
+    }
+    console.log();
+    
+}
+
 
