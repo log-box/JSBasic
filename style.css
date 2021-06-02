@@ -21,7 +21,7 @@
     padding: 0px;
     margin-top: 50px;
     position: absolute;
-    left: 1100px;
+    left: 700px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -65,4 +65,23 @@
     min-height: 100%;
     background-color:gold;
 
+}
+
+
+#big_img {
+    display:flex;
+    /* border-color:  black;
+    border-style: solid; */
+    align-items: center;
+    justify-content: center;
+    margin-top: 65px;
+    padding: auto;
+    min-width: 500px;
+    min-height: 600px;
+    background-size: contain;
+    /* background-color:blanchedalmond; */
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 1200px;
+    visibility: visible;
 }

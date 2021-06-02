@@ -33,7 +33,7 @@ var products = [
 ]
 //отрисовка раздела продукции
 function prod_render() {
-    var prodDiv = document.getElementById('prod');
+    let prodDiv = document.getElementById('prod');
     let textDiv = document.createElement('div');
     prodDiv.appendChild(textDiv);
     textDiv.insertAdjacentHTML('afterbegin', `ПРОДУКЦИЯ: `);
@@ -58,6 +58,7 @@ function render(num) {
     small_img.style.backgroundSize = '100%';
     let button_target = document.querySelector('#button' + num);
     button_target.addEventListener('click', clickHandler);
+    small_img.addEventListener('click', clickImageHandler);
     if (products[num].in_basket == false) {
         button.insertAdjacentHTML('afterbegin', `В корзину`);
     }
@@ -66,7 +67,7 @@ function render(num) {
         button.style.backgroundColor = '#a88989';
     }
 }
-//
+
 //заполнение карточек данными из массива
 for (let n = 0; n < products.length; n++) {
     window.onload = render(n);
@@ -88,29 +89,49 @@ function Product(name, price, array = products) {
     }
 }
 //Функция обработки нажатия на кнопку
-function clickHandler (e) {
-    if (products[e.target.id[(e.target.id.length)-1]].in_basket == true ){
+function clickHandler(e) {
+    if (products[e.target.id[(e.target.id.length) - 1]].in_basket == true) {
         for (let n = 0; n < basket.items.length; n++) {
-            if (basket.items[n].prod_id === products[e.target.id[(e.target.id.length)-1]].prod_id) {
-                basket.items.splice(n,1);
+            if (basket.items[n].prod_id === products[e.target.id[(e.target.id.length) - 1]].prod_id) {
+                basket.items.splice(n, 1);
             }
         }
-        // console.log('Товар', e.target.id[(e.target.id.length)-1],  'уже в корзине');
-        products[e.target.id[(e.target.id.length)-1]].in_basket = false;
+        products[e.target.id[(e.target.id.length) - 1]].in_basket = false;
         e.target.firstChild.data = 'В корзину';
         e.target.style.backgroundColor = '#8a8a66';
         basket_create();
 
     }
-    else{
-        basket.items.push(products[e.target.id[(e.target.id.length)-1]]);
-        products[e.target.id[(e.target.id.length)-1]].in_basket = true;
+    else {
+        basket.items.push(products[e.target.id[(e.target.id.length) - 1]]);
+        products[e.target.id[(e.target.id.length) - 1]].in_basket = true;
         e.target.firstChild.data = 'В корзине';
         e.target.style.backgroundColor = '#a88989';
         basket_create();
     }
     console.log();
-    
+
 }
+let triger = 0;
+function clickImageHandler(e) {
+    let bigImg = document.getElementById('big_img');
+    if (triger != e.target.id) {
+        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';
+        // bigImg.style.backgroundSize = 'auto';
+        bigImg.style.visibility = 'visible';
+        triger = e.target.id;
+    }
+    else {
+        bigImg.style.visibility = 'hidden'
+        triger = 0;
+    }
+}
+
+
+
+
+// window.onload = clickImageHandler;
+
+
 
 
