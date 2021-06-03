@@ -115,7 +115,10 @@ function clickHandler(e) {
 }
 let triger = 0;
 function clickImageHandler(e) {
-    let bigImg = document.getElementById('big_img');
+    console.log(e);
+
+    
+    bigImg.addEventListener('click', clickBigImageHandler);
     if (triger != e.target.id) {
         bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';
         // bigImg.style.backgroundSize = 'auto';
@@ -128,6 +131,24 @@ function clickImageHandler(e) {
     }
 }
 
+function clickBigImageHandler(e){
+    let imgUrl = bigImg.style.backgroundImage;
+    console.log(imgUrl);
+    if (imgUrl != imgUrl.replace('-1.png','-2.png')){
+        imgUrl = imgUrl.replace('-1.png','-2.png')
+        bigImg.style.backgroundImage = imgUrl;
+    }
+    else if (imgUrl != imgUrl.replace('-2.png','-3.png')){
+        imgUrl = imgUrl.replace('-2.png','-3.png')
+        bigImg.style.backgroundImage = imgUrl;
+    }
+    else if (imgUrl != imgUrl.replace('-3.png','-1.png')){
+        imgUrl = imgUrl.replace('-3.png','-1.png')
+        bigImg.style.backgroundImage = imgUrl;
+    }
+
+}
+let bigImg = document.getElementById('big_img');
 
 
 
