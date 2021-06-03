@@ -32,6 +32,7 @@ var products = [
         prod_id: 5
     },
 ]
+
 //отрисовка раздела продукции
 function prod_render() {
     let prodDiv = document.getElementById('prod');
@@ -39,8 +40,8 @@ function prod_render() {
     prodDiv.appendChild(textDiv);
     textDiv.insertAdjacentHTML('afterbegin', `ПРОДУКЦИЯ: `);
 }
-
 window.onload = prod_render();
+
 //отрисовка карточек
 function render(num) {
     let card = document.createElement("div");
@@ -74,8 +75,8 @@ for (let n = 0; n < products.length; n++) {
     window.onload = render(n);
     let target = document.getElementById('card' + n);
     target.insertAdjacentHTML('afterbegin', `${products[n].prod_name} <br> Стоимость -  ${products[n].prod_price} руб.`)
-
 };
+
 //Функция создания продукции с методом добаления в массив
 function Product(name, price, array = products) {
     this.name = name;
@@ -89,6 +90,7 @@ function Product(name, price, array = products) {
         })
     }
 }
+
 //Функция обработки нажатия на кнопку
 function clickHandler(e) {
     if (products[e.target.id[(e.target.id.length) - 1]].in_basket == true) {
@@ -101,7 +103,6 @@ function clickHandler(e) {
         e.target.firstChild.data = 'В корзину';
         e.target.style.backgroundColor = '#8a8a66';
         basket_create();
-
     }
     else {
         basket.items.push(products[e.target.id[(e.target.id.length) - 1]]);
@@ -111,17 +112,14 @@ function clickHandler(e) {
         basket_create();
     }
     console.log();
-
 }
 let triger = 0;
-function clickImageHandler(e) {
-    console.log(e);
 
+//функция нажатия на маленькое изображение
+function clickImageHandler(e) {
     
-    bigImg.addEventListener('click', clickBigImageHandler);
     if (triger != e.target.id) {
         bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';
-        // bigImg.style.backgroundSize = 'auto';
         bigImg.style.visibility = 'visible';
         triger = e.target.id;
     }
@@ -131,6 +129,7 @@ function clickImageHandler(e) {
     }
 }
 
+//функция обработки кликов по большой картинке. Подход примитивный, просто меняем конец строки URL
 function clickBigImageHandler(e){
     let imgUrl = bigImg.style.backgroundImage;
     console.log(imgUrl);
@@ -148,12 +147,9 @@ function clickBigImageHandler(e){
     }
 
 }
+//берем DIV с большой картинкой и присваиваем его к обработчику событий для большой картинки
 let bigImg = document.getElementById('big_img');
-
-
-
-// window.onload = clickImageHandler;
-
+bigImg.addEventListener('click', clickBigImageHandler);
 
 
 

@@ -36,6 +36,7 @@ var basket = {
     }
 }
 
+//функция создания элемента корзины на экране. Ее вызываем после внесения изменений в корзину из раздела product.js
 function basket_create() {
     var basketDiv = document.getElementById("basket");
     basketDiv.innerHTML = '';

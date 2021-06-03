@@ -27,8 +27,6 @@
 }
 
 .card {
-    /* border-color: black;
-    border-style: solid; */
     min-width: 450px;
     min-height: 70px;
     margin: 0px;
@@ -42,8 +40,6 @@
 
 .button{
     display:flex;
-    /* border-color:  black;
-    border-style: solid; */
     align-items: center;
     margin: 0px;
     padding: 0px;
@@ -55,8 +51,6 @@
 
 .small_img {
     display:flex;
-    /* border-color:  black;
-    border-style: solid; */
     align-items: center;
     justify-content: center;
     margin: 0px;
@@ -70,8 +64,6 @@
 
 #big_img {
     display:flex;
-    /* border-color:  black;
-    border-style: solid; */
     align-items: center;
     justify-content: center;
     margin-top: 65px;
@@ -79,7 +71,6 @@
     min-width: 500px;
     min-height: 600px;
     background-size: contain;
-    /* background-color:blanchedalmond; */
     position: absolute;
     background-repeat: no-repeat;
     left: 1200px;
