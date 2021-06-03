@@ -1,3 +1,4 @@
+"use strict";
 //массив продукции
 var products = [
     {
