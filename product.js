@@ -117,9 +117,9 @@ let triger = 0;
 
 //функция нажатия на маленькое изображение
 function clickImageHandler(e) {
-    
+
     if (triger != e.target.id) {
-        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';
+        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-1.png)';
         bigImg.style.visibility = 'visible';
         triger = e.target.id;
     }
@@ -130,19 +130,19 @@ function clickImageHandler(e) {
 }
 
 //функция обработки кликов по большой картинке. Подход примитивный, просто меняем конец строки URL
-function clickBigImageHandler(e){
+function clickBigImageHandler(e) {
     let imgUrl = bigImg.style.backgroundImage;
     console.log(imgUrl);
-    if (imgUrl != imgUrl.replace('-1.png','-2.png')){
-        imgUrl = imgUrl.replace('-1.png','-2.png')
+    if (imgUrl != imgUrl.replace('-1.png', '-2.png')) {
+        imgUrl = imgUrl.replace('-1.png', '-2.png')
         bigImg.style.backgroundImage = imgUrl;
     }
-    else if (imgUrl != imgUrl.replace('-2.png','-3.png')){
-        imgUrl = imgUrl.replace('-2.png','-3.png')
+    else if (imgUrl != imgUrl.replace('-2.png', '-3.png')) {
+        imgUrl = imgUrl.replace('-2.png', '-3.png')
         bigImg.style.backgroundImage = imgUrl;
     }
-    else if (imgUrl != imgUrl.replace('-3.png','-1.png')){
-        imgUrl = imgUrl.replace('-3.png','-1.png')
+    else if (imgUrl != imgUrl.replace('-3.png', '-1.png')) {
+        imgUrl = imgUrl.replace('-3.png', '-1.png')
         bigImg.style.backgroundImage = imgUrl;
     }
 
