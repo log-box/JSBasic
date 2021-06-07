@@ -1,32 +1,6 @@
 "use strict";
 var basket = {
-    items: [
-        // { 
-        //     prod_name: 'Телевизор Samsung', 
-        //     prod_price: 1000,
-        //     in_basket: true
-        // },
-        // { 
-        //     prod_name: 'Монитор ASUS', 
-        //     prod_price: 2000,
-        //     in_basket: true 
-        // },
-        // { 
-        //     prod_name: 'iPhone20', 
-        //     prod_price: 3000,
-        //     in_basket: true 
-        // },
-        // { 
-        //     prod_name: 'XBOX Seriex XXL', 
-        //     prod_price: 4000,
-        //     in_basket: true 
-        // },
-        // { 
-        //     prod_name: 'Sony PlayStation 6', 
-        //     prod_price: 5000,
-        //     in_basket: true 
-        // },
-    ],
+    items: [],
     count() {
         let _sum = 0;
         this.items.forEach(item => {
@@ -35,6 +9,27 @@ var basket = {
         return (`В корзине: ${basket.items.length} товаров на сумму ${_sum} рублей <br>`);
     }
 }
+// let basket = [];
+
+// Ф-я конструктор 'элемента корзины
+function Task(prod_name, prod_price, in_basket = true, prod_id) {
+    this.prod_name = prod_name;
+    this.prod_price = prod_price;
+    this.in_basket = in_basket;
+    this.prod_id = prod_id;
+}
+
+// Отрисовка элементов корзины
+function drawBasket() {
+    const $basket = document.querySelector('#basket');
+    $basket.textContent = '';
+    basket.forEach(function (task, i) {
+        drawTask(task, i, $taskList);
+    })
+
+    console.log(taskList)
+}
+
 
 //функция создания элемента корзины на экране. Ее вызываем после внесения изменений в корзину из раздела product.js
 function basket_create() {
@@ -51,4 +46,4 @@ function basket_create() {
     }
 }
 
-window.onload = basket_create();
+// window.onload = basket_create();
