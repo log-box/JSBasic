@@ -102,14 +102,14 @@ function clickHandler(e) {
         products[e.target.id[(e.target.id.length) - 1]].in_basket = false;
         e.target.firstChild.data = 'В корзину';
         e.target.style.backgroundColor = '#8a8a66';
-        basket_create();
+        // basket_create();
     }
     else {
         basket.items.push(products[e.target.id[(e.target.id.length) - 1]]);
         products[e.target.id[(e.target.id.length) - 1]].in_basket = true;
         e.target.firstChild.data = 'В корзине';
         e.target.style.backgroundColor = '#a88989';
-        basket_create();
+        // basket_create();
     }
     console.log();
 }
