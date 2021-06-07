@@ -1,0 +1,268 @@
+Index: style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#basket_container{\n    border-color: black;\n    border-style: solid;\n    /* max-height: 550px;\n    max-width: 550px; */\n    /* min-height: 50px;\n    min-width: 100px; */\n    height: 400px;\n    width: 500px;\n    margin-top:  50px;\n    position: absolute;\n    left: 50px;\n    color:cyan;\n    flex-direction: column;\n        \n    display:flex;\n    \n    background-color: grey;\n}\n\n#basket{\n    /* border-color: black;\n    border-style: solid;\n\n    height: 700px;\n    width: 500px;\n    margin-top:  50px;\n    position: absolute;\n    left: 50px;\n    color:cyan;\n    justify-content: center;\n    display:flex;\n    flex-wrap: wrap ;\n    background-color: grey; */\n}\n\n#basketTop{\n    text-align: center;\n}\n\n#basketBottom{\n    height: 50px;\n    width: 100%;\n    display: flex;\n    justify-content: space-around;\n    position: absolute;\n    bottom: 0px;\n}\n\n#prod{\n    max-width: 1px;\n    margin: 0px;\n    padding: 0px;\n    margin-top: 50px;\n    position: absolute;\n    left: 700px;\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.card {\n    min-width: 450px;\n    min-height: 70px;\n    margin: 0px;\n    padding: 0px;\n    display: flex;\n    color: white;\n    align-items: center;\n    background-color: green;\n    justify-content: space-between;\n}\n\n.button{\n    display:flex;\n    align-items: center;\n    margin: 0px;\n    padding: 0px;\n    justify-content: center;\n    min-width: 100px;\n    min-height: 100%;\n    background-color: #8a8a66;\n}\n.buttonB{\n    display:flex;\n    align-items: center;\n    margin: 0px;\n    padding: 0px;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n    background-color: #8a8a66;\n}\n\n.small_img {\n    display:flex;\n    align-items: center;\n    justify-content: center;\n    margin: 0px;\n    padding: 0px;\n    min-width: 100px;\n    min-height: 100%;\n    background-color:gold;\n\n}\n\n\n#big_img {\n    display:flex;\n    align-items: center;\n    justify-content: center;\n    margin-top: 65px;\n    padding: auto;\n    min-width: 500px;\n    min-height: 600px;\n    background-size: contain;\n    position: absolute;\n    background-repeat: no-repeat;\n    left: 1200px;\n    visibility: visible;\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/style.css b/style.css
+--- a/style.css	(revision 992dd7fc1348a0874d4c3dc54e69367f78207697)
++++ b/style.css	(date 1623077276991)
+@@ -1,29 +1,10 @@
+-#basket_container{
++#basket{
+     border-color: black;
+     border-style: solid;
+-    /* max-height: 550px;
+-    max-width: 550px; */
+-    /* min-height: 50px;
+-    min-width: 100px; */
+-    height: 400px;
+-    width: 500px;
+-    margin-top:  50px;
+-    position: absolute;
+-    left: 50px;
+-    color:cyan;
+-    flex-direction: column;
+-        
+-    display:flex;
+-    
+-    background-color: grey;
+-}
+-
+-#basket{
+-    /* border-color: black;
+-    border-style: solid;
+-
+-    height: 700px;
+-    width: 500px;
++    max-height: 550px;
++    max-width: 550px;
++    min-height: 50px;
++    min-width: 100px;
+     margin-top:  50px;
+     position: absolute;
+     left: 50px;
+@@ -31,20 +12,7 @@
+     justify-content: center;
+     display:flex;
+     flex-wrap: wrap ;
+-    background-color: grey; */
+-}
+-
+-#basketTop{
+-    text-align: center;
+-}
+-
+-#basketBottom{
+-    height: 50px;
+-    width: 100%;
+-    display: flex;
+-    justify-content: space-around;
+-    position: absolute;
+-    bottom: 0px;
++    background-color: grey;
+ }
+ 
+ #prod{
+@@ -80,16 +48,6 @@
+     min-height: 100%;
+     background-color: #8a8a66;
+ }
+-.buttonB{
+-    display:flex;
+-    align-items: center;
+-    margin: 0px;
+-    padding: 0px;
+-    justify-content: center;
+-    width: 100%;
+-    height: 100%;
+-    background-color: #8a8a66;
+-}
+ 
+ .small_img {
+     display:flex;
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Les7 Logvin A.Y.</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n</head>\n\n<body>\n    <div class='relative' id='rel' style=\"position: relative;\">\n        <!-- <div class=\"main\" id=\"container\">!!</div> -->\n        <div class='main' id='basket_container'>\n            <div class='main' id='basketTop'>\n                <p>КОРЗИНА</p>\n            </div>\n            <div class='main' id='basket'>\nwewe\n            </div>\n            <div class='main' id='basketBottom'>\n                <button class='buttonB' id='button-addres'>Адрес</button>\n                <button class='buttonB' id='button-basket-detail'>Корзина</button>\n                <button class='buttonB' id='button-basket'>Состав корзины</button>\n            </div>\n        </div>\n        <div class='main' id='prod'></div>\n        <div class='main' id='big_img'></div>\n        <!--        <script src=\"board.js\"></script>-->\n        <script src=\"basket.js\"></script>\n        <script src=\"product.js\"></script>\n    </div>\n</body>\n\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 992dd7fc1348a0874d4c3dc54e69367f78207697)
++++ b/index.html	(date 1623077276991)
+@@ -5,26 +5,14 @@
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Les7 Logvin A.Y.</title>
++    <title>Les6 Logvin A.Y.</title>
+     <link rel="stylesheet" type="text/css" href="style.css">
+ </head>
+ 
+ <body>
+     <div class='relative' id='rel' style="position: relative;">
+-        <!-- <div class="main" id="container">!!</div> -->
+-        <div class='main' id='basket_container'>
+-            <div class='main' id='basketTop'>
+-                <p>КОРЗИНА</p>
+-            </div>
+-            <div class='main' id='basket'>
+-wewe
+-            </div>
+-            <div class='main' id='basketBottom'>
+-                <button class='buttonB' id='button-addres'>Адрес</button>
+-                <button class='buttonB' id='button-basket-detail'>Корзина</button>
+-                <button class='buttonB' id='button-basket'>Состав корзины</button>
+-            </div>
+-        </div>
++        <!-- <div class="main" id="container"></div> -->
++        <div class='main' id='basket'></div>
+         <div class='main' id='prod'></div>
+         <div class='main' id='big_img'></div>
+         <!--        <script src="board.js"></script>-->
+Index: product.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\";\n//массив продукции\nvar products = [\n    {\n        prod_name: '22\" (55 см) Телевизор LED DEXP F22F7000K черный',\n        prod_price: 100000,\n        in_basket: false,\n        prod_id: 1\n    },\n    {\n        prod_name: 'Ключ активации DOOM (1993) (Xbox ONE)',\n        prod_price: 10000,\n        in_basket: false,\n        prod_id: 2\n    },\n    {\n        prod_name: 'Кабель Samsung USB Type-C - USB Type C черный 1 м',\n        prod_price: 1000,\n        in_basket: false,\n        prod_id: 3\n    },\n    {\n        prod_name: '27\" Монитор LG 27QN600-B [27QN600-B.ARUZ]',\n        prod_price: 100,\n        in_basket: false,\n        prod_id: 4\n    },\n    {\n        prod_name: '2 ТБ Внешний HDD WD Elements Portable [WDBU6Y0020BBK]',\n        prod_price: 10,\n        in_basket: false,\n        prod_id: 5\n    },\n]\n\n//отрисовка раздела продукции\nfunction prod_render() {\n    let prodDiv = document.getElementById('prod');\n    let textDiv = document.createElement('div');\n    prodDiv.appendChild(textDiv);\n    textDiv.insertAdjacentHTML('afterbegin', `ПРОДУКЦИЯ: `);\n}\nwindow.onload = prod_render();\n\n//отрисовка карточек\nfunction render(num) {\n    let card = document.createElement(\"div\");\n    let button = document.createElement(\"div\");\n    let small_img = document.createElement('div');\n    card.appendChild(small_img);\n    prod.appendChild(card);\n    card.appendChild(button);\n    card.className = 'card';\n    card.id = 'card' + num;\n    button.className = 'button';\n    button.id = 'button' + num;\n    small_img.className = 'small_img';\n    small_img.id = 'small_img' + num;\n    small_img.style.backgroundImage = 'url(img/small/' + num + '.png)';\n    small_img.style.backgroundSize = '100%';\n    let button_target = document.querySelector('#button' + num);\n    button_target.addEventListener('click', clickHandler);\n    small_img.addEventListener('click', clickImageHandler);\n    if (products[num].in_basket == false) {\n        button.insertAdjacentHTML('afterbegin', `В корзину`);\n    }\n    else {\n        button.insertAdjacentHTML('afterbegin', `В корзине`)\n        button.style.backgroundColor = '#a88989';\n    }\n}\n\n//заполнение карточек данными из массива\nfor (let n = 0; n < products.length; n++) {\n    window.onload = render(n);\n    let target = document.getElementById('card' + n);\n    target.insertAdjacentHTML('afterbegin', `${products[n].prod_name} <br> Стоимость -  ${products[n].prod_price} руб.`)\n};\n\n//Функция создания продукции с методом добаления в массив\nfunction Product(name, price, array = products) {\n    this.name = name;\n    this.price = price;\n    this._array = array;\n\n    this.pushToArray = function () {\n        return this._array.push({\n            prod_name: this.name,\n            prod_price: this.price\n        })\n    }\n}\n\n//Функция обработки нажатия на кнопку\nfunction clickHandler(e) {\n    if (products[e.target.id[(e.target.id.length) - 1]].in_basket == true) {\n        for (let n = 0; n < basket.items.length; n++) {\n            if (basket.items[n].prod_id === products[e.target.id[(e.target.id.length) - 1]].prod_id) {\n                basket.items.splice(n, 1);\n            }\n        }\n        products[e.target.id[(e.target.id.length) - 1]].in_basket = false;\n        e.target.firstChild.data = 'В корзину';\n        e.target.style.backgroundColor = '#8a8a66';\n        // basket_create();\n    }\n    else {\n        basket.items.push(products[e.target.id[(e.target.id.length) - 1]]);\n        products[e.target.id[(e.target.id.length) - 1]].in_basket = true;\n        e.target.firstChild.data = 'В корзине';\n        e.target.style.backgroundColor = '#a88989';\n        // basket_create();\n    }\n    console.log();\n}\nlet triger = 0;\n\n//функция нажатия на маленькое изображение\nfunction clickImageHandler(e) {\n    \n    if (triger != e.target.id) {\n        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';\n        bigImg.style.visibility = 'visible';\n        triger = e.target.id;\n    }\n    else {\n        bigImg.style.visibility = 'hidden'\n        triger = 0;\n    }\n}\n\n//функция обработки кликов по большой картинке. Подход примитивный, просто меняем конец строки URL\nfunction clickBigImageHandler(e){\n    let imgUrl = bigImg.style.backgroundImage;\n    console.log(imgUrl);\n    if (imgUrl != imgUrl.replace('-1.png','-2.png')){\n        imgUrl = imgUrl.replace('-1.png','-2.png')\n        bigImg.style.backgroundImage = imgUrl;\n    }\n    else if (imgUrl != imgUrl.replace('-2.png','-3.png')){\n        imgUrl = imgUrl.replace('-2.png','-3.png')\n        bigImg.style.backgroundImage = imgUrl;\n    }\n    else if (imgUrl != imgUrl.replace('-3.png','-1.png')){\n        imgUrl = imgUrl.replace('-3.png','-1.png')\n        bigImg.style.backgroundImage = imgUrl;\n    }\n\n}\n//берем DIV с большой картинкой и присваиваем его к обработчику событий для большой картинки\nlet bigImg = document.getElementById('big_img');\nbigImg.addEventListener('click', clickBigImageHandler);\n\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/product.js b/product.js
+--- a/product.js	(revision 992dd7fc1348a0874d4c3dc54e69367f78207697)
++++ b/product.js	(date 1623077276991)
+@@ -102,14 +102,14 @@
+         products[e.target.id[(e.target.id.length) - 1]].in_basket = false;
+         e.target.firstChild.data = 'В корзину';
+         e.target.style.backgroundColor = '#8a8a66';
+-        // basket_create();
++        basket_create();
+     }
+     else {
+         basket.items.push(products[e.target.id[(e.target.id.length) - 1]]);
+         products[e.target.id[(e.target.id.length) - 1]].in_basket = true;
+         e.target.firstChild.data = 'В корзине';
+         e.target.style.backgroundColor = '#a88989';
+-        // basket_create();
++        basket_create();
+     }
+     console.log();
+ }
+@@ -117,9 +117,9 @@
+ 
+ //функция нажатия на маленькое изображение
+ function clickImageHandler(e) {
+-    
++
+     if (triger != e.target.id) {
+-        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-2.png)';
++        bigImg.style.backgroundImage = 'url(img/big/' + (e.target.id[9]) + '-1.png)';
+         bigImg.style.visibility = 'visible';
+         triger = e.target.id;
+     }
+@@ -130,19 +130,19 @@
+ }
+ 
+ //функция обработки кликов по большой картинке. Подход примитивный, просто меняем конец строки URL
+-function clickBigImageHandler(e){
++function clickBigImageHandler(e) {
+     let imgUrl = bigImg.style.backgroundImage;
+     console.log(imgUrl);
+-    if (imgUrl != imgUrl.replace('-1.png','-2.png')){
+-        imgUrl = imgUrl.replace('-1.png','-2.png')
++    if (imgUrl != imgUrl.replace('-1.png', '-2.png')) {
++        imgUrl = imgUrl.replace('-1.png', '-2.png')
+         bigImg.style.backgroundImage = imgUrl;
+     }
+-    else if (imgUrl != imgUrl.replace('-2.png','-3.png')){
+-        imgUrl = imgUrl.replace('-2.png','-3.png')
++    else if (imgUrl != imgUrl.replace('-2.png', '-3.png')) {
++        imgUrl = imgUrl.replace('-2.png', '-3.png')
+         bigImg.style.backgroundImage = imgUrl;
+     }
+-    else if (imgUrl != imgUrl.replace('-3.png','-1.png')){
+-        imgUrl = imgUrl.replace('-3.png','-1.png')
++    else if (imgUrl != imgUrl.replace('-3.png', '-1.png')) {
++        imgUrl = imgUrl.replace('-3.png', '-1.png')
+         bigImg.style.backgroundImage = imgUrl;
+     }
+ 
+Index: basket.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"use strict\";\nvar basket = {\n    items: [],\n    count() {\n        let _sum = 0;\n        this.items.forEach(item => {\n            _sum += item.prod_price\n        })\n        return (`В корзине: ${basket.items.length} товаров на сумму ${_sum} рублей <br>`);\n    }\n}\n// let basket = [];\n\n// Ф-я конструктор 'элемента корзины\nfunction Task(prod_name, prod_price, in_basket = true, prod_id) {\n    this.prod_name = prod_name;\n    this.prod_price = prod_price;\n    this.in_basket = in_basket;\n    this.prod_id = prod_id;\n}\n\n// Отрисовка элементов корзины\nfunction drawBasket() {\n    const $basket = document.querySelector('#basket');\n    $basket.textContent = '';\n    basket.forEach(function (task, i) {\n        drawTask(task, i, $taskList);\n    })\n\n    console.log(taskList)\n}\n\n\n//функция создания элемента корзины на экране. Ее вызываем после внесения изменений в корзину из раздела product.js\nfunction basket_create() {\n    var basketDiv = document.getElementById(\"basket\");\n    basketDiv.innerHTML = '';\n    if (basket.items.length == 0) {\n        basketDiv.insertAdjacentHTML('afterbegin', '<p>Корзина пуста</p>')\n    }\n    else {\n        basketDiv.insertAdjacentHTML('afterbegin', basket.count())\n    }\n    for (let n = 0; n < basket.items.length; n++) {\n        basketDiv.insertAdjacentHTML('beforeend', `${n + 1}: ${basket.items[n].prod_name}, стоимость - ${basket.items[n].prod_price} руб.<br>`)\n    }\n}\n\n// window.onload = basket_create();\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/basket.js b/basket.js
+--- a/basket.js	(revision 992dd7fc1348a0874d4c3dc54e69367f78207697)
++++ b/basket.js	(date 1623077276975)
+@@ -1,6 +1,32 @@
+ "use strict";
+ var basket = {
+-    items: [],
++    items: [
++        // { 
++        //     prod_name: 'Телевизор Samsung', 
++        //     prod_price: 1000,
++        //     in_basket: true
++        // },
++        // { 
++        //     prod_name: 'Монитор ASUS', 
++        //     prod_price: 2000,
++        //     in_basket: true 
++        // },
++        // { 
++        //     prod_name: 'iPhone20', 
++        //     prod_price: 3000,
++        //     in_basket: true 
++        // },
++        // { 
++        //     prod_name: 'XBOX Seriex XXL', 
++        //     prod_price: 4000,
++        //     in_basket: true 
++        // },
++        // { 
++        //     prod_name: 'Sony PlayStation 6', 
++        //     prod_price: 5000,
++        //     in_basket: true 
++        // },
++    ],
+     count() {
+         let _sum = 0;
+         this.items.forEach(item => {
+@@ -9,27 +35,6 @@
+         return (`В корзине: ${basket.items.length} товаров на сумму ${_sum} рублей <br>`);
+     }
+ }
+-// let basket = [];
+-
+-// Ф-я конструктор 'элемента корзины
+-function Task(prod_name, prod_price, in_basket = true, prod_id) {
+-    this.prod_name = prod_name;
+-    this.prod_price = prod_price;
+-    this.in_basket = in_basket;
+-    this.prod_id = prod_id;
+-}
+-
+-// Отрисовка элементов корзины
+-function drawBasket() {
+-    const $basket = document.querySelector('#basket');
+-    $basket.textContent = '';
+-    basket.forEach(function (task, i) {
+-        drawTask(task, i, $taskList);
+-    })
+-
+-    console.log(taskList)
+-}
+-
+ 
+ //функция создания элемента корзины на экране. Ее вызываем после внесения изменений в корзину из раздела product.js
+ function basket_create() {
+@@ -46,4 +51,4 @@
+     }
+ }
+ 
+-// window.onload = basket_create();
++window.onload = basket_create();
