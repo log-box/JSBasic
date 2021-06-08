@@ -1,0 +1,120 @@
+#basket_container{
+    border-color: black;
+    border-style: solid;
+    /* max-height: 550px;
+    max-width: 550px; */
+    /* min-height: 50px;
+    min-width: 100px; */
+    height: 400px;
+    width: 500px;
+    margin-top:  50px;
+    position: absolute;
+    left: 50px;
+    color:cyan;
+    flex-direction: column;
+        
+    display:flex;
+    
+    background-color: grey;
+}
+
+#basket{
+    /* border-color: black;
+    border-style: solid;
+logbox
+    height: 700px;
+    width: 500px;
+    margin-top:  50px;
+    position: absolute;
+    left: 50px;
+    color:cyan;
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap ;
+    background-color: grey; */
+}
+
+#basketTop{
+    text-align: center;
+}
+
+#basketBottom{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+}
+
+#prod{
+    max-width: 1px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 50px;
+    position: absolute;
+    left: 700px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    min-width: 450px;
+    min-height: 70px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    color: white;
+    align-items: center;
+    background-color: green;
+    justify-content: space-between;
+}
+
+.button{
+    display:flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 100%;
+    background-color: #8a8a66;
+}
+.buttonB{
+    display:flex;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #8a8a66;
+}
+
+.small_img {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    min-width: 100px;
+    min-height: 100%;
+    background-color:gold;
+
+}
+
+
+#big_img {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 65px;
+    padding: auto;
+    min-width: 500px;
+    min-height: 600px;
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+    left: 1200px;
+    visibility: visible;
+}
